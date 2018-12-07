@@ -11,7 +11,7 @@ import string
 from collections import deque
 import urllib
 import logging
-from django.utils import simplejson
+import json
 
 from google.appengine.api.labs import taskqueue
 from google.appengine.api import users
@@ -405,7 +405,7 @@ class Request(webapp.RequestHandler):
 						
 			
 			# Render and Return JSON to requesting script
-			self.response.out.write(simplejson.dumps(connection_json))
+			self.response.out.write(json.dumps(connection_json))
 
 
 		#
@@ -453,7 +453,7 @@ class Request(webapp.RequestHandler):
 				
 						
 			# Render and Return JSON to requesting script
-			self.response.out.write(simplejson.dumps(connection_json))
+			self.response.out.write(json.dumps(connection_json))
 
 		#
 		# connection_data - returns JSON of connection data for the max_results
@@ -502,7 +502,7 @@ class Request(webapp.RequestHandler):
 				
 						
 			# Render and Return JSON to requesting script
-			self.response.out.write(simplejson.dumps(connection_json))
+			self.response.out.write(json.dumps(connection_json))
 
 		#
 		# tree_connections - returns JSON of connections for tree
@@ -541,7 +541,7 @@ class Request(webapp.RequestHandler):
 						
 			
 			# Render and Return JSON to requesting script
-			self.response.out.write(simplejson.dumps(connection_json))
+			self.response.out.write(json.dumps(connection_json))
 
 COUNTER = 0
 
